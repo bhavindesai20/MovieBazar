@@ -1,0 +1,152 @@
+<div class="panel panel-default movie-container">
+    <div class="panel-body">
+
+        <div class="row top-part">
+            <div class="col-xs-12 col-md-4 movie-image">
+                <img ng-show="movie.Poster" class="img-rounded" src="{{movie.Poster}}" />
+                <div ng-show="!movie.Poster" class="img-rounded img-alt">
+                    <span>{{movie.Title}}</span>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-8 movie-desc">
+                <h2 ng-show="movie.Title">{{movie.Title}}<span ng-show="movie.Year">-{{movie.Year}}</span></h2>
+                <p ng-show="movie.Plot"><span ng-show="movie.Type"><strong>In this {{movie.Type}}, </strong></span>{{movie.Plot}}</p>
+                <p ng-hide="!movie.Released && !movie.Runtime && !movie.Rated">
+                    <span ng-show="movie.Released && movie.Released!=='N/A'" class="badge">{{movie.Released}}</span>
+                    <span ng-show="movie.Runtime && movie.Runtime!=='N/A'" class="badge">{{movie.Runtime}}</span>
+                    <span ng-show="movie.Rated && movie.Rated!=='N/A'" class="badge">{{movie.Rated}}</span>
+                </p>
+                <p class="movieGenra" ng-show="movie.Genre[0]!==''">
+                    <span ng-repeat="Genre in movie.Genre" class="badge">{{Genre}}</span>
+                </p>
+                <p class="movieActors" ng-show="movie.Actors[0]!==''">
+                    <span><strong>Starring - </strong></span>
+                    <span ng-repeat="Actors in movie.Actors">{{Actors}}<span ng-hide="$index===(movie.Actors.length-1)">,</span></span>
+                </p>
+                <p class="movieDirector" ng-show="movie.Director[0] !== ''">
+                    <span><strong>Directed By - </strong></span>
+                    <span ng-repeat="Director in movie.Director">{{Director}}</span>
+                </p>
+                <p class="movieWriter" ng-show="movie.Writer[0] !== ''">
+                    <span><strong>Written By -</strong></span>
+                    <span ng-repeat="Writer in movie.Writer">{{Writer}}<span ng-hide="$index===(movie.Writer.length-1)">,</span></span>
+                </p>
+            </div>
+        </div>
+
+        <div class="bottom-part">
+
+            <div class="row">
+                <div class="col-xs-12 col-md-6 languageAc">
+                    <div class="panel-group" id="langAccordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="langHeading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" onclick="return false;" data-parent="#langAccordion" href="#Lcollapse" aria-expanded="true" aria-controls="Lcollapse">
+                                    Language Availability
+                                    </a>
+                            </h4>
+                            </div>
+                            <div id="Lcollapse" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="langHeading">
+                                <div class="panel-body">
+                                    <span ng-repeat="lan in movie.Language">{{lan}}<span ng-hide="$index===(movie.Language.length-1)">,</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xs-12 col-md-6 countryAc">
+                    <div class="panel-group" id="counAccordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="conHeading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" onclick="return false;" data-parent="#counAccordion" href="#Ccollapse" aria-expanded="true" aria-controls="Ccollapse">
+                                    Country Availability
+                                    </a>
+                            </h4>
+                            </div>
+                            <div id="Ccollapse" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="conHeading">
+                                <div class="panel-body">
+                                    <span ng-repeat="con in movie.Country">{{con}}<span ng-hide="$index===(movie.Country.length-1)">,</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row imdbrow">
+
+                <div class="col-xs-12 col-md-12 imdbAc">
+                    <div class="panel-group" id="imdbAccordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="imdbHeading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" onclick="return false;" data-parent="#imdbAccordion" href="#imdbcollapse" aria-expanded="true" aria-controls="imdbcollapse">
+                                    IMDB DATA
+                                    </a>
+                            </h4>
+                            </div>
+                            <div id="imdbcollapse" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="imdbHeading">
+                                <div class="panel-body">
+                                    <div class="col-xs-12 col-md-6">
+                                        <span>IMDB Rating -</span><span>> {{movie.imdbRating}}</span>
+
+                                        <!-- rating  -->
+                                        <div class="critic-rating">
+                                            <h5>Relative Star Rating</h5>
+                                            <div class="rating star-{{movie.imdbRating | getRatingClass}}">
+                                                <i class="fa fa-star star-1-on"></i>
+                                                <i class="fa fa-star star-off star-1-off"></i>
+                                                <i class="fa fa-star-half star-1-half"></i>
+                                                <i class="fa fa-star star-2-on"></i>
+                                                <i class="fa fa-star star-off star-2-off"></i>
+                                                <i class="fa fa-star-half star-2-half"></i>
+                                                <i class="fa fa-star star-3-on"></i>
+                                                <i class="fa fa-star star-off star-3-off"></i>
+                                                <i class="fa fa-star-half star-3-half"></i>
+                                                <i class="fa fa-star star-4-on"></i>
+                                                <i class="fa fa-star star-off star-4-off"></i>
+                                                <i class="fa fa-star-half star-4-half"></i>
+                                                <i class="fa fa-star star-5-on"></i>
+                                                <i class="fa fa-star star-off star-5-off"></i>
+                                                <i class="fa fa-star-half star-5-half"></i>
+                                                <!-- commented as we created half equivalent 5 star according to IMDB data
+                                                <i class="fa fa-star star-6-on"></i>
+                                                <i class="fa fa-star star-off star-6-off"></i>
+                                                <i class="fa fa-star-half star-6-half"></i>
+                                                <i class="fa fa-star star-7-on"></i>
+                                                <i class="fa fa-star star-off star-7-off"></i>
+                                                <i class="fa fa-star-half star-7-half"></i>
+                                                <i class="fa fa-star star-8-on"></i>
+                                                <i class="fa fa-star star-off star-8-off"></i>
+                                                <i class="fa fa-star-half star-8-half"></i>
+                                                <i class="fa fa-star star-9-on"></i>
+                                                <i class="fa fa-star star-off star-9-off"></i>
+                                                <i class="fa fa-star-half star-9-half"></i>
+                                                <i class="fa fa-star star-10-on"></i>
+                                                <i class="fa fa-star star-off star-10-off"></i>
+                                                <i class="fa fa-star-half star-10-half"></i> -->
+                                          </div>
+                                        </div>
+                                         <!--  end rating-->
+
+
+                                    </div>
+                                    <div class="col-xs-12 col-md-6">
+                                        <span>IMDB Votes-</span><span>> {{movie.imdbVotes}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>

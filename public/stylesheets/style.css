@@ -1,0 +1,311 @@
+/*bootstrap 3 comes with container width high so we have scrollbar at bottom of pag to remove it
+http://stackoverflow.com/questions/18392477/how-to-make-bootstrap-3-fluid-layout-without-horizontal-scrollbar
+*/
+
+a. a:hover, a:active, a:focus {
+    text-decoration: none;
+}
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+body {
+    background-color: #141414;
+}
+/*to remove footer space, provide padding-bottom in footer class (here .bottom-end) */
+.bottom-end
+{
+    margin-top:40px;
+    text-align: center;
+    background-color: #141414;
+    color:gray;
+    min-height: 100px;
+    font-weight: 800;
+    font-size: 20px;
+    bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.register {
+    width: 40%;
+    border: 2px solid rgb(241, 241, 241);
+    box-shadow: 0px 0px 40px #fff;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-left: 0px;
+    padding-right: 0px;
+    border-radius: 0px 18px 0px;
+}
+.register .panel {
+    margin-bottom: 0px;
+    padding-bottom: 40px;
+    border-radius: 0px 15px 0px;
+}
+.register .panel button {
+    background-color: #2d2d2d;
+    color: #fff;
+}
+.homePanel {
+    border: 2px solid rgb(241, 241, 241);
+    box-shadow: 0px 0px 20px rgb(157, 135, 135);
+    margin-top: 40px;
+}
+.homePanel .panel-heading {
+    height: 50px;
+}
+.homePanel .show-list img {
+    width: 100%;
+    background-color: silver;
+    background-image: none;
+    height: 300px;
+}
+.homePanel .show-list .img-alt {
+    width: 100%;
+    background-color: silver;
+    background-image: none;
+    height: 300px;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 140px;
+}
+.homePanel .show-list .img-alt:hover {
+    background-color: #fff;
+}
+.homePanel .show-list a, .homePanel .show-list a:hover {
+    text-decoration: none;
+    color: black;
+}
+.homePanel .show-list .img-hover {
+    width: 90%;
+    background-color: #000000;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    /* For IE8 and earlier */
+    
+    font-size: 20px;
+    text-align: center;
+    padding-top: 120px;
+    color: white;
+    height: 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 15px;
+    word-break: keep-all;
+    z-index: 9999;
+}
+.homePanel .show-list .img-hover span {
+    color: #fff;
+}
+.homePanel .show-list .img-hover .btn-moreinfo {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+/* alert */
+
+.ng-modal-overlay {
+    /* A dark translucent div that covers the whole screen */
+    
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0.8;
+}
+.ng-modal-dialog {
+    /* A centered div above the overlay with a box shadow. */
+    
+    z-index: 10000;
+    position: absolute;
+    width: 50%;
+    /* Default */
+    /* Center the dialog */
+    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-shadow: 4px 4px 80px #000;
+}
+.ng-modal-dialog .panel-default {
+    width: 100%;
+    height: 100%;
+}
+.ng-modal-dialog .panel-heading {
+    background-color: orange;
+    background-image: none;
+    color: #fff;
+}
+.ng-modal-dialog .panel-body {
+    height: 100%;
+}
+.ng-modal-dialog-content {
+    padding: 10px;
+    text-align: left;
+}
+.ng-modal-close {
+    position: absolute;
+    top: 3px;
+    right: 5px;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 120%;
+    display: inline-block;
+    font-weight: bold;
+    font-family: 'arial', 'sans-serif';
+}
+/*alert*/
+/* movie page */
+
+.movie-container {
+    border: 2px solid rgb(241, 241, 241);
+    box-shadow: 0px 0px 20px rgb(157, 135, 135);
+    margin-top: 40px;
+    background-color: #646464;
+    border-radius: 0px 15px 0px 0px;
+}
+.movie-container .panel-body {
+    padding: 60px;
+}
+/*top-part */
+
+.movie-container .top-part {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    /*border:1px solid green;*/
+    
+    background-color: #323232;
+}
+.movie-image, .movie-desc {
+    /*border: 1px solid black;*/
+    
+    height: 400px;
+    padding-left: 30px;
+    padding-right: 0px;
+}
+.movie-desc {
+    padding-right: 20px;
+}
+.movie-image img, .movie-image .img-alt {
+    height: 400px;
+    width: 100%;
+    border: 10px solid gray;
+    border-style: inset;
+    box-shadow: 0px 0px 22px gray;
+}
+.movie-image .img-alt {
+    background-color: silver;
+    background-image: none;
+    font-size: 35px;
+    text-align: center;
+    line-height: normal;
+    color: black;
+    vertical-align: center;
+    padding-top: 170px;
+}
+.movie-desc h2 {
+    margin-top: 0px;
+    color: gray;
+}
+.movie-desc p {
+    color: gray;
+    font-size: 18px;
+}
+.movie-desc .movieGenra span {
+    margin-right: 5px;
+}
+/*bottom-part*/
+
+.bottom-part {
+    margin-top: 20px;
+    min-height: 300px;
+    padding-top: 40px;
+}
+.languageAc, .countryAc, .imdbAc {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.languageAc .panel-heading, .countryAc .panel-heading, .imdbAc .panel-heading {
+    background-color: #323232;
+    color: gray;
+    background-image: none;
+}
+.languageAc .panel-title a:hover, .countryAc .panel-title a:hover, .imdbAc .panel-title a:hover {
+    text-decoration: none;
+}
+.languageAc .panel-body, .countryAc .panel-body, .imdbAc .panel-body {
+    padding: 10px;
+    color: gray;
+    font-weight: 700;
+    font-size: 15px;
+}
+.imdbrow {
+    margin-top: 20px;
+}
+.imdbAc .panel-body {
+    font-size: 20px;
+}
+/*rating*/
+
+.star-off {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+    filter: alpha(opacity=20);
+    opacity: 0.2;
+}
+.critic-rating {
+    float: left;
+    width: 100%;
+}
+.critic-rating h5 {
+    float: left;
+    margin-right: 10px;
+    font-weight: 700;
+}
+.rating {
+    margin-top: 5px;
+    position: relative;
+    float: left;
+}
+.rating .fa-star-half, .rating .fa-star {
+    position: absolute;
+    top: 0;
+    width: 20px;
+    display: none;
+}
+.star-1-on, .star-1-off, .star-1-half {
+    left: 0;
+}
+.star-2-on, .star-2-off, .star-2-half {
+    left: 20px;
+}
+.star-3-on, .star-3-off, .star-3-half {
+    left: 40px;
+}
+.star-4-on, .star-4-off, .star-4-half {
+    left: 60px;
+}
+.star-5-on, .star-5-off, .star-5-half {
+    left: 80px;
+}
+/*.star-6-on, .star-6-off, .star-6-half {
+    left: 100px;
+}
+.star-7-on, .star-7-off, .star-7-half {
+    left: 120px;
+}
+.star-8-on, .star-8-off, .star-8-half {
+    left: 140px;
+}
+.star-9-on, .star-9-off, .star-9-half {
+    left: 160px;
+}
+.star-10-on, .star-10-off, .star-10-half {
+    left: 180px;
+}*/

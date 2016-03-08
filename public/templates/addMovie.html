@@ -1,0 +1,25 @@
+<div class="container register">
+    <div class="row">
+        <div class="center-form panel">
+            <div class="panel-body">
+                <h2 class="text-center">Add Movie</h2>
+
+                <form>
+                    <div class="form-group">
+                        <input class="form-control" type="text" ng-model="movie" placeholder="Movie Name" require autofocus>
+                    </div>
+                    <button ng-click="addMovie()" class="btn btn-lg btn-block">Add Movie</button>
+                    <button ng-click="cancelAdd()" class="btn btn-lg btn-block">Cancel</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <modal-dialog show='modalShown' width='400px' height='50%'>
+        <p>{{alertMsg}}<p>
+    </modal-dialog>
+    <!-- for confirmation
+    <modal-dialog show='modalShown' width='400px' height='60%' close="toggleIt">
+        <p>Hello Bhavin<p>
+    </modal-dialog>
+    confirmation -->
